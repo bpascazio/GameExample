@@ -9,14 +9,21 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    let player = SKSpriteNode(imageNamed: "player")
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 45;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        backgroundColor = SKColor.whiteColor()
+        player.position = CGPoint(x: size.width*0.1, y: size.height*0.5)
+        addChild(player)
         
-        self.addChild(myLabel)
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence(
+                [SKAction.runBlock(addMonster),
+                SKAction.waitForDuration(1.0)]
+            )
+        ))
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -42,4 +49,40 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
+    
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random())/0xFFFFFFFF)
+    }
+    
+    func random(min:CGFloat, max:CGFloat) -> CGFloat {
+        return random() * (max - min) + min
+    }
+    
+    func addMonster() {
+        
+        let monster = SKSpriteNode(imageNamed: "monster")
+        
+        let actualY = random(monster.size.height/2, max:size.height-monster.size.height/2)
+        
+        monster.position = CGPoint(x:size.width + monster.size.width/2, y:actualY)
+        
+        addChild(monster)
+        
+        let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+        monster.runAction(SKAction.repeatActionForever(action))
+        
+        let actionScaleUp = SKAction.scaleBy(10.0, duration: 0.25)
+        let actionScaleDown = SKAction.scaleBy(0.1, duration: 0.25)
+        monster.runAction(SKAction.sequence([actionScaleUp,actionScaleDown]))
+        
+        
+        let actualDuration = random(CGFloat(2.0), max:CGFloat(4.0))
+        
+        let actionMove = SKAction.moveTo(CGPoint(x:-monster.size.width/2, y:actualY), duration: NSTimeInterval(actualDuration))
+        
+        let actionMoveDone = SKAction.removeFromParent()
+        monster.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        
+    }
+    
 }
