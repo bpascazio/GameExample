@@ -20,9 +20,13 @@ class GameScene: SKScene {
         runAction(SKAction.repeatActionForever(
             SKAction.sequence(
                 [SKAction.runBlock(addMonster),
-                SKAction.waitForDuration(1.0)]
+                SKAction.waitForDuration(0.2)]
             )
         ))
+        
+        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
+        backgroundMusic.autoplayLooped = true
+        addChild(backgroundMusic)
         
     }
     

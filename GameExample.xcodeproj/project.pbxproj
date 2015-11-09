@@ -13,6 +13,7 @@
 		C1A3151B1BEADB9D00FA2658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A315191BEADB9D00FA2658 /* Main.storyboard */; };
 		C1A3151D1BEADB9D00FA2658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A3151C1BEADB9D00FA2658 /* Assets.xcassets */; };
 		C1A315201BEADB9D00FA2658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A3151E1BEADB9D00FA2658 /* LaunchScreen.storyboard */; };
+		C1A315281BEAF5F200FA2658 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = C1A315271BEAF53E00FA2658 /* background-music-aac.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C1A3151C1BEADB9D00FA2658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A3151F1BEADB9D00FA2658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1A315211BEADB9D00FA2658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1A315271BEAF53E00FA2658 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C1A315191BEADB9D00FA2658 /* Main.storyboard */,
 				C1A3151C1BEADB9D00FA2658 /* Assets.xcassets */,
 				C1A3151E1BEADB9D00FA2658 /* LaunchScreen.storyboard */,
+				C1A315271BEAF53E00FA2658 /* background-music-aac.caf */,
 				C1A315211BEADB9D00FA2658 /* Info.plist */,
 			);
 			path = GameExample;
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A315281BEAF5F200FA2658 /* background-music-aac.caf in Resources */,
 				C1A315201BEADB9D00FA2658 /* LaunchScreen.storyboard in Resources */,
 				C1A3151D1BEADB9D00FA2658 /* Assets.xcassets in Resources */,
 				C1A3151B1BEADB9D00FA2658 /* Main.storyboard in Resources */,
